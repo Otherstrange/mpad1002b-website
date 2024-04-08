@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #161616;
-    background-image: url(MainVideoPlayer\Website_background.png);
+    background-image: url("Website_background.png");
     min-height: 100%;
     
     background-repeat: no-repeat;
