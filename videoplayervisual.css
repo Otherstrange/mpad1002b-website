@@ -61,7 +61,7 @@ button.menu:active {
 }
 
 .player {
-    
+    border: #161616;
     margin-top: 10%;
     margin-left: 47%;
     width: 100%;
@@ -181,6 +181,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .optionsButtonsSecClass button {
@@ -200,4 +201,3 @@ h1 {
     flex-direction:row;
 
 }
-
