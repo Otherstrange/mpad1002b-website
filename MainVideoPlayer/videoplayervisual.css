@@ -1,5 +1,14 @@
 body {
 
+    margin: 0;
+    padding: 0;
+    background-color: #161616;
+    background-image: url('Website\ background.png');
+    min-height: 100%;
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:center;
     display: flex;
     flex-direction:column;
     justify-content:space-between;
@@ -7,11 +16,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    width:100%;
     
 }
 
@@ -56,12 +62,11 @@ button.menu:active {
 
 .player {
     
+    position: fixed;
     display: flex;
     justify-content: center;
-    background-color: #383838;
-    width:55%;
+    width: 60%;
     padding: 15px;
-    border-radius: 10px;
 
 }
 
@@ -90,7 +95,6 @@ button.menu:active {
     display: flex;
     justify-content:center;
     align-items:center;
-    background-color: beige;
     width:100%;
     min-height:100vh;
     justify-content:100vh;
