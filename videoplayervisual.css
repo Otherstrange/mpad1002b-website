@@ -1,0 +1,163 @@
+body {
+
+    margin: 0;
+    padding: 0;
+    background-color: #161616;
+    background-image: url("Website_background.png");
+    min-height: 100%;
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:center;
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+}
+
+header {
+    
+    display:flex;
+    align-items:center;
+    color:white;
+    font-size:2rem;
+    
+}
+
+button.menu {
+    
+    display: flex;
+    justify-content: start;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    border-radius: 5rem;
+    border: none;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    margin: 20px;
+
+}
+
+button.menu:hover {
+
+    background-color: #161616;
+    transition:.5s;
+
+}
+
+button.menu:active {
+
+    transform: scale(0.9);
+    transition:0s;
+
+}
+
+.player {
+    
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    padding: 15px;
+
+}
+
+.submenuClass {
+
+    display:flex;
+    position: fixed; 
+    top: 0px; 
+    left: -200px; 
+    margin: 0px; 
+    background-color:#333;
+    height:100%;
+    transition: left 1s ease;
+    width:200px;
+
+}
+
+.submenuClass.active {
+
+    left: 0;
+
+}
+
+.mainvideoplayer {
+
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    min-height:100vh;
+    justify-content:100vh;
+
+}
+
+.mainvideoplayer h1 {
+
+    display:none;
+
+}
+
+a {
+
+    text-decoration: none;
+    color: #161616;
+    
+}
+
+li {
+
+
+    list-style: none;
+    padding-bottom:1rem;
+    
+}
+
+ul {
+
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    padding: 1rem;
+    
+}
+
+h1 {
+
+    display:none;
+    
+}
+
+.submenuButtonsClass button {
+
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    font: inherit;
+
+}
+
+.submenuButtonsClass a, button {
+
+    color:#bbb0b0;
+    transition: all .3s ease-in-out;
+    padding-left:1rem;
+
+}
+
+.submenuButtonsClass button:hover, a:hover {
+
+    color:white;
+    transition: all .3s ease-in-out;
+
+}
