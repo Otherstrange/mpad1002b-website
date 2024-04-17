@@ -201,3 +201,11 @@ h1 {
     flex-direction:row;
 
 }
+
+.player iframe {
+
+    display:flex;
+    width:995px;
+    height:560px;
+
+}
