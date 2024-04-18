@@ -2,10 +2,10 @@ let menuButton = document.getElementById("menuButton"); // id for the menu butto
 let videobutton = document.getElementById("videoPlayerLink"); // id for the button on the sub menu that leads to the video player
 let subMenu = document.getElementById("submenuId"); // id for the sub menu itself
 let optionsButtons = document.getElementById("optionsButtonsListId"); // id for the list of buttons below the video player
-let iframePlayer = document.getElementById("vimeoId"); // id for the iframe that contains the video player
+let iframePlayer = document.getElementById("vimeoId"); // class for the iframe that contains the video player
+// const player = new Vimeo.Player(iframePlayer); // Creates a new Vimeo player
 let menu_open = 0
 
-iframePlayer.src = "https://player.vimeo.com/video/935318444?h=1c05a2036a&autoplay=1&title=0&byline=0&portrait=0"
 
 menuButton.addEventListener("click", handleMenu);
 videobutton.addEventListener("click", handleMenu);
@@ -33,18 +33,18 @@ function handleClickOutside(event) { // Handles the ability to close the sub men
         menu_open = 0
     }
 }
-        
 
 function onVimeoPlayerReady() { // Handles the ability for buttons to appear when the Vimeo video ends
-    var player = new Vimeo.Player(document.getElementById('vimeoId'));
+    const player = new Vimeo.Player(iframePlayer); // Creates a new Vimeo player
 
     player.on('ended', function() {
         optionsButtons.style.display="flex";
-        // You can execute any action here when the video ends
+        console.log('ended')
     });
 
     player.on('play', function() {
         optionsButtons.style.display="none";
+        console.log('play')
     });
 }
 
