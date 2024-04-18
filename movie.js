@@ -39,7 +39,17 @@ function onVimeoPlayerReady() { // Handles the ability for buttons to appear whe
 
     player.on('ended', function() {
         optionsButtons.style.display="flex";
-        console.log('ended')
+
+        let srcValue = iframePlayer.src;
+
+        for (let i = 0; i < videosArray.length; i++) {
+            if (srcValue === videosArray[i].src) {
+                videosArray[i].watched = true;
+            }
+        }
+
+        updateButtons();
+        
     });
 
     player.on('play', function() {
@@ -52,32 +62,56 @@ function onVimeoPlayerReady() { // Handles the ability for buttons to appear whe
 function updateButtons() { // Handles the ability to update the buttons on the video player
     let option1 = document.getElementById("option1Class");
     let option2 = document.getElementById("option2Class");
+
+    let srcValue = iframePlayer.src;
+    
+    for (let i = 0; i < videosArray.length; i++) {
+        if (srcValue === videosArray[i].src) {
+            option1.innerHTML = videosArray[i].option1;
+            option2.innerHTML = videosArray[i].option2;
+            option1.addEventListener("click", function() {
+                iframePlayer.src = videosArray[i].option1Link;
+                updateButtons();
+                onVimeoPlayerReady();
+            });
+            option2.addEventListener("click", function() {
+                iframePlayer.src = videosArray[i].option2Link;
+                updateButtons();
+                onVimeoPlayerReady();
+            });
+            console.log(videosArray[i].desc)
+            console.log(videosArray[i].watched)
+        }
+    }
 }
 
 
 let videosArray = [
-    { // Max wakes up from dream
+    { 
         src: 'https://player.vimeo.com/video/935318444?h=1c05a2036a&autoplay=1&title=0&byline=0&portrait=0',
         option1: 'Kick Henri out',
         option2: 'Let Henri stay',
         option1Link:"https://player.vimeo.com/video/935984923?h=47d7c5698b&autoplay=1&title=0&byline=0&portrait=0",
         option2Link:"https://player.vimeo.com/video/935321011?h=9a04ff9c86&autoplay=1&title=0&byline=0&portrait=0",
         watched: false,
+        desc: "Max wakes up from dream"
     },
-    { // Gang chooses to kick Henri out
+    { 
         src: 'https://player.vimeo.com/video/935984923?h=47d7c5698b&autoplay=1&title=0&byline=0&portrait=0',
         option1: 'test1',
         option2: 'kick option',
-        option1Link:"https://player.vimeo.com/video/935984923?h=47d7c5698b",
-        option2Link:"https://player.vimeo.com/video/935321011?h=9a04ff9c86",
+        option1Link:"https://player.vimeo.com/video/935318444?h=1c05a2036a&autoplay=1&title=0&byline=0&portrait=0",
+        option2Link:"https://player.vimeo.com/video/935318444?h=1c05a2036a&autoplay=1&title=0&byline=0&portrait=0",
         watched: false,
+        desc: "Gang chooses to kick Henri out"
     },
-    { // Gang chooses to let Henri stay
+    { 
         src: 'https://player.vimeo.com/video/935321011?h=9a04ff9c86&autoplay=1&title=0&byline=0&portrait=0',
         option1: 'test1',
         option2: 'stay option',
-        option1Link:"https://player.vimeo.com/video/935984923?h=47d7c5698b",
-        option2Link:"https://player.vimeo.com/video/935321011?h=9a04ff9c86",
+        option1Link:"https://player.vimeo.com/video/935318444?h=1c05a2036a&autoplay=1&title=0&byline=0&portrait=0",
+        option2Link:"https://player.vimeo.com/video/935318444?h=1c05a2036a&autoplay=1&title=0&byline=0&portrait=0",
         watched: false,
+        desc: "Gang chooses to let Henri stay"
     }
 ];
