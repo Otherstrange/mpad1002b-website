@@ -10,7 +10,6 @@ iframePlayer.src = "https://player.vimeo.com/video/935318444?h=1c05a2036a&autopl
 menuButton.addEventListener("click", handleMenu);
 videobutton.addEventListener("click", handleMenu);
 
-localStorage.setItem('videosArray', JSON.stringify(videosArray));
 
 function handleMenu(event) { // Handles the ability to open and close the sub menu
     if (menu_open === 0) {
