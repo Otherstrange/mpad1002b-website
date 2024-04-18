@@ -9,7 +9,7 @@
 
         <meta http-equiv="X-UA-Compatible" content="ie=edge" >
 
-        <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" >
+        <!-- <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" > -->
 
         <title>Henri's Revenge - Working Title</title>
 
@@ -41,7 +41,7 @@
             <section class="mainvideoplayer">                
 
                 <div class="player">
-                    <iframe allow="fullscreen" allowfullscreen src="https://streamable.com/e/gj5fdc?"></iframe>
+                    <iframe id="vimeoId" class="vimeoClass"src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
                 <!--
@@ -54,14 +54,17 @@
 
             <section class="optionsButtonsSecClass" id="optionsButtonSecId">
                 <ul class="optionsButtonsListClass" id="optionsButtonsListId">
-                    <li><button>Option 1</button></li>
-                    <li><button>Option 2</button></li>
+                    <li><button id="option1Class">Option 1</button></li>
+                    <li><button id="option2Class">Option 2</button></li>
                 </ul>
             </section>
 
-            <script src="movie.js"></script>
+            <script type="text/javascript" src="/movie.js"></script>
+            <script src="https://player.vimeo.com/api/player.js" onload="onVimeoPlayerReady()"></script>
+            
             <!-- <script src="movie.js"></script> swap when using github pages -->
 
         </main>
     </body>
 </html>
+
