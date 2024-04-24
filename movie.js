@@ -19,48 +19,219 @@ let videosArray = [
     },
     {
         src: 'https://player.vimeo.com/video/937553012?h=c42256c85b&autoplay=1&title=0&byline=0&portrait=0',
-        option1: "test1",
-        option2: "test2",
-        option1Link: "test1",
-        option2Link: "test2",
+        option1: "Pick Kayley for Truth or Dare",
+        option2: "Pick Amen for Truth or Dare",
+        option1Link: "kayleyispicked",
+        option2Link: "amenispicked",
         desc: "Max calls Henri a freak D:",
         videoid: "maxcallshenrifreak",
     },
     {
         src: 'https://player.vimeo.com/video/937572196?h=b90319a3a5&autoplay=1&title=0&byline=0&portrait=0',
-        option1: "test1",
-        option2: "test2",
-        option1Link: "test1",
-        option2Link: "test2",
+        option1: "Pick Kayley for Truth or Dare",
+        option2: "Pick Amen for Truth or Dare",
+        option1Link: "kayleyispicked",
+        option2Link: "amenispicked",
         desc: "Max calls Henri a freak D: test",
         videoid: "maxthinkshenrischill"
+    }, // end of the start of the movie
+    {  // Start of Kayley Path
+        src: 'https://player.vimeo.com/video/938443720?h=ac5c164a5e&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "Kick Henri out",
+        option2: "Let Henri stay",
+        option1Link: "maxkickshenriout",
+        option2Link: "maxletshenristay",
+        desc: "Kayley is chosen for truth or dare. Deadly consequences...",
+        videoid: "kayleyispicked"
     },
-    { 
-        src: 'https://player.vimeo.com/video/935318444?h=1c05a2036a&autoplay=1&title=0&byline=0&portrait=0',
-        option1: 'Kick Henri out',
-        option2: 'Let Henri stay',
-        option1Link:"gangkickshenriout",
-        option2Link:"gangletshenristay",
-        desc: "Max wakes up from dream",
-        videoid: "maxwakesupfromdream",
+    { // Start of Kayley Path - Kick Henri Out
+        src: 'https://player.vimeo.com/video/938446960?h=d90159f425&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "Go left",
+        option2: "Go right",
+        option1Link: "kayleyeverybodyhenri",
+        option2Link: "kayleygoright1",
+        desc: "The gang kicks Henri out. (Kayley path)",
+        videoid: "maxkickshenriout"
     },
-    { 
-        src: 'https://player.vimeo.com/video/935984923?h=47d7c5698b&autoplay=1&title=0&byline=0&portrait=0',
-        option1: 'test1',
-        option2: 'kick option',
-        option1Link:"https://player.vimeo.com/video/935318444?h=1c05a2036a&autoplay=1&title=0&byline=0&portrait=0",
-        option2Link:"https://player.vimeo.com/video/935318444?h=1c05a2036a&autoplay=1&title=0&byline=0&portrait=0",
-        desc: "Gang chooses to kick Henri out",
-        videoid: "gangkickshenriout",
+    { // Kayley path - Everyone is Henri - End
+        src: 'https://player.vimeo.com/video/938450308?h=aa7de6b801&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "END",
+        option2: "END",
+        option1Link: "startingscene",
+        option2Link: "startingscene",
+        desc: "Max takes a potion (that good kush ong), and EVERYONE IS HENRI?!?",
+        videoid: "kayleyeverybodyhenri"
     },
-    { 
-        src: 'https://player.vimeo.com/video/935321011?h=9a04ff9c86&autoplay=1&title=0&byline=0&portrait=0',
-        option1: 'test1',
-        option2: 'stay option',
-        option1Link:"https://player.vimeo.com/video/935318444?h=1c05a2036a&autoplay=1&title=0&byline=0&portrait=0",
-        option2Link:"https://player.vimeo.com/video/935318444?h=1c05a2036a&autoplay=1&title=0&byline=0&portrait=0",
-        desc: "Gang chooses to let Henri stay",
-        videoid: "gangletshenristay",
+    { // Kayley path - Going right 1
+        src: 'https://player.vimeo.com/video/938454060?h=f0a3d193bc&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "Try to crawl away",
+        option2: "Listen to her monologue",
+        option1Link: "kayleycrawlanddie",
+        option2Link: "kayleylistentomonologue",
+        desc: "Max goes right! (Kayley path) (no Henri)",
+        videoid: "kayleygoright1"
+    },
+    { // Kayley path - Going right - Crawl away and die END 
+        src: 'https://player.vimeo.com/video/938455761?h=d0203e938d&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "END",
+        option2: "END",
+        option1Link: "startingscene",
+        option2Link: "startingscene",
+        desc: "Everyone is dead. Kiran is alive. Maybe don't try escaping. Sounds counter intuitive.",
+        videoid: "kayleycrawlanddie"
+    },
+    { // Kayley path - Going right - Listen to Monologue - END
+        src: 'https://player.vimeo.com/video/938455807?h=ec8f9c8419&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "END",
+        option2: "END",
+        option1Link: "startingscene",
+        option2Link: "startingscene",
+        desc: "Max listens to Kiran's monologue, and Henri saves the day!!",
+        videoid: "kayleylistentomonologue"
+    },
+    { // Start of Kayley path, let Henri stay
+        src: 'https://player.vimeo.com/video/938446903?h=42683e7093&title=0&autoplay=1&byline=0&portrait=0',
+        option1: "Go left",
+        option2: "Go right",
+        option1Link: "kayleygoleft2",
+        option2Link: "kayleygoright2",
+        desc: "The gang lets Henri stay (Kayley path)",
+        videoid: "maxletshenristay"
+    },
+    { // Kayley path - Henri stays - Going right
+        src: 'https://player.vimeo.com/video/938462885?h=4be9ae9394&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "Don't go with Henri",
+        option2: "Go with Henri",
+        option1Link: "kayleydontgowithhenri",
+        option2Link: "kayleygowithhenri",
+        desc: "Max and Henri decide to split up. Max goes right!",
+        videoid: "kayleygoright2"
+    },
+    { // Kayley path - Henri stays - Going left
+        src: 'https://player.vimeo.com/video/938462984?h=6b03aaf737&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "Don't go with Henri",
+        option2: "Go with Henri",
+        option1Link: "kayleydontgowithhenri",
+        option2Link: "kayleygowithhenri",
+        desc: "Max and Henri decide to stick together?!!?",
+        videoid: "kayleygoleft2"
+    },
+    { // Kayley path - Henri stays - Go with Henri END
+        src: 'https://player.vimeo.com/video/938467177?h=431020ddfd&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "END",
+        option2: "END",
+        option1Link: "startingscene",
+        option2Link: "startingscene",
+        desc: "Run away with Henri, seems like a good choice!",
+        videoid: "kayleygowithhenri"
+    },
+    { // Kayley path - Henri stays - Go without Henri END
+        src: 'https://player.vimeo.com/video/938463077?h=64314be1d3&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "END",
+        option2: "END",
+        option1Link: "startingscene",
+        option2Link: "startingscene",
+        desc: "Henri could be the killer!! FUCK THAT GUY!!",
+        videoid: "kayleydontgowithhenri"
+    },
+    { // Start of Amen path
+        src: 'https://player.vimeo.com/video/938467268?h=daeac1799d&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "Kick Henri out",
+        option2: "Let Henri stay",
+        option1Link: "maxkickshenrioutamen",
+        option2Link: "maxletshenristayamen",
+        desc: "Amen is chosen for truth or dare. Deadly consequences..?",
+        videoid: "amenispicked"
+    },
+    { // Amen path - Henri can stay
+        src: 'https://player.vimeo.com/video/938467596?h=34acac02e1&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "Go left",
+        option2: "Go right",
+        option1Link: "amengoleft1",
+        option2Link: "amengoright1",
+        desc: "The gang lets Henri stay. Such nice individuals.",
+        videoid: "maxletshenristayamen"
+    },
+    { // Amen path - Henri can stay - Left path
+        src: 'https://player.vimeo.com/video/938470917?h=fd3e1f8ac9&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "Don't go with Henri",
+        option2: "Go with Henri",
+        option1Link: "amendontgowithhenri",
+        option2Link: "amengowithhenri",
+        desc: "Max and Henri decide to stick together?!!?",
+        videoid: "amengoleft1"
+    },
+    { // Amen path - Henri can stay - Right path
+        src: 'https://player.vimeo.com/video/938470921?h=1f6c953256&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "Don't go with Henri",
+        option2: "Go with Henri",
+        option1Link: "amendontgowithhenri",
+        option2Link: "amengowithhenri",
+        desc: "Max and Henri decide to split up. Max goes right!",
+        videoid: "amengoright1"
+    },
+    { // Amen path - Henri stays - Going left - Go with Henri END
+        src: 'https://player.vimeo.com/video/938467177?h=431020ddfd&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "END",
+        option2: "END",
+        option1Link: "startingscene",
+        option2Link: "startingscene",
+        desc: "Run away with Henri, seems like a good choice!",
+        videoid: "amengowithhenri"
+    },
+    { // Amen path - Henri stays - Going left - Go without Henri END
+        src: 'https://player.vimeo.com/video/938463077?h=64314be1d3&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "END",
+        option2: "END",
+        option1Link: "startingscene",
+        option2Link: "startingscene",
+        desc: "Henri could be the killer!! FUCK THAT GUY!!",
+        videoid: "amendontgowithhenri"
+    },
+    { // Amen path - Henri cant stay
+        src: 'https://player.vimeo.com/video/938470898?h=d4bc0fac93&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "Go left",
+        option2: "Go right",
+        option1Link: "ameneveryoneishenri",
+        option2Link: "amengoright2",
+        desc: "The gang kicks Henri out. Such rude individuals.",
+        videoid: "maxkickshenrioutamen"
+    },
+    { // Amen path - Henri leaves - Everybody's Henri END
+        src: 'https://player.vimeo.com/video/938450308?h=aa7de6b801&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "END",
+        option2: "END",
+        option1Link: "startingscene",
+        option2Link: "startingscene",
+        desc: "Max took some edibles, and now everyone is handsome?!?!",
+        videoid: "ameneveryoneishenri"
+    },
+    { // Amen path - Henri leaves - Go right
+        src: 'https://player.vimeo.com/video/938484024?h=89831b92a4&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "Try to crawl away",
+        option2: "Listen to her monologue",
+        option1Link: "amencrawlanddie",
+        option2Link: "amenlistentomonologue",
+        desc: "Max took some edibles, and now everyone is handsome?!?!",
+        videoid: "amengoright2"
+    },
+    { // Amen path - Going right - Crawl away and die END 
+        src: 'https://player.vimeo.com/video/938455761?h=d0203e938d&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "END",
+        option2: "END",
+        option1Link: "startingscene",
+        option2Link: "startingscene",
+        desc: "Everyone is dead. Kiran is alive. Maybe don't try escaping. Sounds counter intuitive.",
+        videoid: "amencrawlanddie"
+    },
+    { // Amen path - Going right - Listen to Monologue - END
+        src: 'https://player.vimeo.com/video/938455807?h=ec8f9c8419&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "END",
+        option2: "END",
+        option1Link: "startingscene",
+        option2Link: "startingscene",
+        desc: "Max listens to Kiran's monologue, and Henri saves the day!!",
+        videoid: "amenlistentomonologue"
     }
 ];
 
