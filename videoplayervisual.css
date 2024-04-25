@@ -4,11 +4,10 @@ body {
     padding: 0;
     background-color: #161616;
     background-image: url("Website_background.png");
-    min-height: 100%;
-    
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position:center;
+    background-size: 100% 100%;
     display: flex;
     flex-direction:column;
     justify-content:space-between;
@@ -98,6 +97,7 @@ button.menu:active {
     width:100%;
     min-height:100vh;
     justify-content:100vh;
+    transform: translateX(-8%)
 
 }
 
@@ -116,7 +116,6 @@ a {
 
 li {
 
-
     list-style: none;
     padding-bottom:1rem;
     
@@ -132,6 +131,12 @@ ul {
 }
 
 h1 {
+
+    display:none;
+    
+}
+
+h2 {
 
     display:none;
     
@@ -164,8 +169,8 @@ h1 {
 
 .optionsButtonsListClass {
 
-    position:absolute;
-    transform:translateY(-100%);
+    position: absolute;
+    transform: translateY(-159%) translateX(21%);
     border: none;
     background: none;
     cursor: pointer;
@@ -178,26 +183,35 @@ h1 {
 
 .optionsButtonsSecClass {
     
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 
 }
 
 .optionsButtonsSecClass button {
 
-        padding: 1rem;
-        margin: 1rem;
-        border-radius: 3rem;
+        padding: 5.3rem 6.5rem 5.3rem 6.5rem;
+        margin: 0.5rem;
         color: rgb(102, 25, 25);
-        background-color: #fffffff6;
-        border-color: rgb(102, 25, 25);
+        background-color: rgb(240, 240, 240);
+        border: rgb(102, 25, 25) solid 0.3rem;
+        font-weight:bold;
+
+}
+
+.optionsButtonsSecClass button:hover {
+
+    background-color: rgb(107, 42, 42);
+    color: rgb(199, 199, 199);
+    transition: all .3s ease-in-out;
 
 }
 
 .optionsButtonsListClass {
 
-    display:none;
+    display:flex;
     flex-direction:row;
 
 }
