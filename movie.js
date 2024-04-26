@@ -68,7 +68,7 @@ let videosArray = [
         option2Link: "startingscene",
         desc: "Max takes a potion (that good kush ong), and EVERYONE IS HENRI?!?",
         videoid: "kayleyeverybodyhenri",
-        endingid: "everyonehenriend"
+        endingid: "end"
     },
     { // Kayley path - Going right 1
         src: 'https://player.vimeo.com/video/938454060?h=f0a3d193bc&autoplay=1&title=0&byline=0&portrait=0',
@@ -88,7 +88,7 @@ let videosArray = [
         option2Link: "startingscene",
         desc: "Everyone is dead. Kiran is alive. Maybe don't try escaping. Sounds counter intuitive.",
         videoid: "kayleycrawlanddie",
-        endingid: "crawlanddieend"
+        endingid: "end"
     },
     { // Kayley path - Going right - Listen to Monologue - END
         src: 'https://player.vimeo.com/video/938455807?h=ec8f9c8419&autoplay=1&title=0&byline=0&portrait=0',
@@ -98,7 +98,7 @@ let videosArray = [
         option2Link: "startingscene",
         desc: "Max listens to Kiran's monologue, and Henri saves the day!!",
         videoid: "kayleylistentomonologue",
-        endingid: "listentomonologueend"
+        endingid: "end"
     },
     { // Start of Kayley path, let Henri stay
         src: 'https://player.vimeo.com/video/938446903?h=42683e7093&title=0&autoplay=1&byline=0&portrait=0',
@@ -138,7 +138,7 @@ let videosArray = [
         option2Link: "startingscene",
         desc: "Run away with Henri, seems like a good choice!",
         videoid: "kayleygowithhenri",
-        endingid: "gowithhenriend"
+        endingid: "end"
     },
     { // Kayley path - Henri stays - Go without Henri END
         src: 'https://player.vimeo.com/video/938463077?h=64314be1d3&autoplay=1&title=0&byline=0&portrait=0',
@@ -148,7 +148,7 @@ let videosArray = [
         option2Link: "startingscene",
         desc: "Henri could be the killer!! FUCK THAT GUY!!",
         videoid: "kayleydontgowithhenri",
-        endingid: "gowithouthenriend"
+        endingid: "end"
     },
     { // Start of Amen path
         src: 'https://player.vimeo.com/video/938467268?h=daeac1799d&autoplay=1&title=0&byline=0&portrait=0',
@@ -198,7 +198,7 @@ let videosArray = [
         option2Link: "startingscene",
         desc: "Run away with Henri, seems like a good choice!",
         videoid: "amengowithhenri",
-        endingid: "gowithhenriend"
+        endingid: "end"
     },
     { // Amen path - Henri stays - Going left - Go without Henri END
         src: 'https://player.vimeo.com/video/938463077?h=64314be1d3&autoplay=1&title=0&byline=0&portrait=0',
@@ -208,7 +208,7 @@ let videosArray = [
         option2Link: "startingscene",
         desc: "Henri could be the killer!! FUCK THAT GUY!!",
         videoid: "amendontgowithhenri",
-        endingid: "gowithouthenriend"
+        endingid: "end"
     },
     { // Amen path - Henri cant stay
         src: 'https://player.vimeo.com/video/938470898?h=d4bc0fac93&autoplay=1&title=0&byline=0&portrait=0',
@@ -229,7 +229,7 @@ let videosArray = [
         option2Link: "startingscene",
         desc: "Max took some edibles, and now everyone is handsome?!?!",
         videoid: "ameneveryoneishenri",
-        endingid: "everyonehenriend"
+        endingid: "end"
     },
     { // Amen path - Henri leaves - Go right
         src: 'https://player.vimeo.com/video/938484024?h=89831b92a4&autoplay=1&title=0&byline=0&portrait=0',
@@ -249,7 +249,7 @@ let videosArray = [
         option2Link: "startingscene",
         desc: "Everyone is dead. Kiran is alive. Maybe don't try escaping. Sounds counter intuitive.",
         videoid: "amencrawlanddie",
-        endingid: "crawlanddieend"
+        endingid: "end"
     },
     { // Amen path - Going right - Listen to Monologue - END
         src: 'https://player.vimeo.com/video/938455807?h=ec8f9c8419&autoplay=1&title=0&byline=0&portrait=0',
@@ -259,7 +259,17 @@ let videosArray = [
         option2Link: "startingscene",
         desc: "Max listens to Kiran's monologue, and Henri saves the day!!",
         videoid: "amenlistentomonologue",
-        endingid: "listentomonologueend"
+        endingid: "end"
+    },
+    { // Credits
+        src: 'https://player.vimeo.com/video/939411658?h=6bb99e59a7&autoplay=1&title=0&byline=0&portrait=0',
+        option1: "Restart?",
+        option2: "Restart!",
+        option1Link: "startingscene",
+        option2Link: "startingscene",
+        desc: "And the credits roll...",
+        videoid: "credits",
+        endingid: "none"
     }
 ];
 
@@ -344,75 +354,81 @@ function initializePlayer() {
             if (srcValue === videosArray[i].src) {
 
                 endingid = videosArray[i].endingid;
+            
+            }
+        
+        }
 
-                if (endingid !== "none") {
+        if (endingid === "end") {
 
-                    rememberEnding = endingid;
+            localStorage.setItem("currentsrc", "credits");
+
+            const removePlayer = document.getElementById("vimeoId");
+
+            removePlayer.remove()
+
+            initializePlayer();
+
+        }
+
+        else {
+
+            let option1 = document.getElementById("option1Class");
+
+            let option2 = document.getElementById("option2Class");
+
+            optionsButtons.style.display = "flex";
+            
+            document.exitFullscreen();
+
+            for (let i = 0; i < videosArray.length; i++) {
+
+                if (srcValue === videosArray[i].src) {
+                
+                    option1.innerHTML = videosArray[i].option1;
+                
+                    option2.innerHTML = videosArray[i].option2;
+
+                    localStorage.setItem(videosArray[i].videoid, true);
+
+                    option1.addEventListener("click", function() {
+                        
+                        // Sets current video source to the option 1 link (actually a videoid)
+                        localStorage.setItem("currentsrc", videosArray[i].option1Link);
+
+                        optionsButtons.style.display = "none";
+
+                        const removePlayer = document.getElementById("vimeoId");
+
+                        removePlayer.remove()
+
+                        initializePlayer();
+
+                    });
+                        
+                    option2.addEventListener("click", function() {
+                        
+                        // Sets current video source to the option 2 link (actually a videoid)
+                        localStorage.setItem("currentsrc", videosArray[i].option2Link);
+                        
+                        optionsButtons.style.display = "none";
+
+                        const removePlayer = document.getElementById("vimeoId");
+
+                        removePlayer.remove()
+
+                        initializePlayer();
+
+                    });
+                        
+                    break;
 
                 }
-
-                console.log(endingid);
-
-                break;
-            
             }
-        
-        }
 
-        let option1 = document.getElementById("option1Class");
+            optionsButtons.style.display = "flex";
 
-        let option2 = document.getElementById("option2Class");
-
-        optionsButtons.style.display = "flex";
-        
-        document.exitFullscreen();
-
-        for (let i = 0; i < videosArray.length; i++) {
-
-            if (srcValue === videosArray[i].src) {
-            
-                option1.innerHTML = videosArray[i].option1;
-            
-                option2.innerHTML = videosArray[i].option2;
-
-                localStorage.setItem(videosArray[i].videoid, true);
-
-                option1.addEventListener("click", function() {
-                    
-                    // Sets current video source to the option 1 link (actually a videoid)
-                    localStorage.setItem("currentsrc", videosArray[i].option1Link);
-
-                    optionsButtons.style.display = "none";
-
-                    const removePlayer = document.getElementById("vimeoId");
-
-                    removePlayer.remove()
-
-                    initializePlayer();
-
-                });
-                    
-                option2.addEventListener("click", function() {
-                    
-                    // Sets current video source to the option 2 link (actually a videoid)
-                    localStorage.setItem("currentsrc", videosArray[i].option2Link);
-                    
-                    optionsButtons.style.display = "none";
-
-                    const removePlayer = document.getElementById("vimeoId");
-
-                    removePlayer.remove()
-
-                    initializePlayer();
-
-                });
-                    
-                break;
-
-            }
-        }
-
-        optionsButtons.style.display = "flex";
+        }   
 
     });
 
