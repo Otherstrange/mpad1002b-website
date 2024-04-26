@@ -275,6 +275,8 @@ let videosArray = [
 
 let previousSrc = localStorage.currentsrc;
 
+localStorage.setItem("currentsrc", "startingscene");
+
 if (previousSrc === null) {
 
     localStorage.setItem("currentsrc", 'maxwakesupfromdream');
